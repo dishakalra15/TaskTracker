@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee's Home page</title>
+    <link rel="stylesheet" href="/css/emp-css.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap"
+        rel="stylesheet">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <main class="app">
+        {{#each rows}}
+        <section class="task-lists">
+            <form action="/users/{{this.user_id}}/tasks/{{this.id}}" method="POST">
+                <div class="row task-item task-content">
+                    <div id="cuttext" class="col-6 col-md-4">{{this.task_date}} </div>
+                    <div class="col-12 col-md-8">
+                        <textarea name="content" id="contente" rows="3"
+                            class="form-control">{{this.description}}</textarea>
+                    </div>
+                    <div class="actions">
+                        <button class="edit" type="button" onclick="editit()">Save</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+        
+        {{/each}}
+    </main>
+    {{!--
+    <script src="main.js"></script> --}}
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="/scripts/editit.js"></script>
+    
+</body>
+
+</html>

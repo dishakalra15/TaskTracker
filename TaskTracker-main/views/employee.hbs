@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee's Home page</title>
+    <link rel="stylesheet" href="/css/emp-css.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap"
+        rel="stylesheet">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div class="container-fluid">
+          <a class="navbar-brand" >Task Tracker</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                {{!-- <a class="nav-link active" aria-current="page" href="/">Home</a> --}}
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" method="get" action="/logout">
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Log Out</button>
+        </form>
+    
+          </div>
+        </div>
+      </nav>
+    <main class="app">
+        <!-- Jumbotron -->
+
+        {{!-- <h1 class="mb-3 h2">Jumbotron</h1> --}}
+
+        {{!-- <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus praesentium
+            labore accusamus sequi, voluptate debitis tenetur in deleniti possimus modi voluptatum
+            neque maiores dolorem unde? Aut dolorum quod excepturi fugit.
+        </p> --}}
+        <!-- Jumbotron -->
+        <section class="greeting">
+            <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white " style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');
+  ">
+
+                <section class="task-lists">
+                    <div id="greet">
+                        {{!-- <h2 class=" mb-3 h2">
+                            Hello! {{owner.name}},
+
+                        </h2>
+                        <h4>
+                            A Quote for you : {{owner.quote}}
+                        </h4> --}}
+                    </div>
+                </section>
+            </div>
+
+        </section>
+        <section class="enter-task ">
+            <div class="layout d-flex justify-content-center">
+                <h3>Enter Tasks</h3>
+                {{!-- <label for="exampleFormControlTextarea1">What did I do today ?</label> --}}
+            </div>
+            <div id="do">
+                <form id="new-task-form" class="form-group" >
+                    <textarea name="description" id="content" rows="3" class="form-control"
+                        placeholder="What did I do today ?"></textarea>
+                    <textarea id="current" name="dt" hidden></textarea>
+                    <input type="button" value="Add task" name="taskno" id="add" onclick="saveit()"   />
+                </form>
+            </div>
+            <form>
+            </form>
+        </section>
+
+        <section class="task-lists">
+            <h3>Task List</h3>
+            {{!-- {{#each rows}} --}}
+            {{!-- action="/users/{{this.user_id}}/tasks/{{this.id}}" method="GET" --}}
+            <form>
+                <div id="cards">
+                    {{!-- <div class="row task-item task-content">
+                        <div id="cuttext" class="col-6 col-md-4"> </div>
+                        <div class="col-12 col-md-8">
+                            <textarea readonly name="content" id="contenti" rows="3" class="form-control"></textarea>
+                        </div>
+                        <div class="actions">
+                            <button class="edit" type="button">Edit</button>
+                        </div>
+                    </div> --}}
+                </div>
+            </form>
+            {{!-- {{/each}} --}}
+        </section>
+    </main>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="/scripts/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+#input{
+    padding: 0;
+
+}
+
+.heading{
+    padding: 2%;
+}
+body{
+    background-color: rgba(70, 159, 214, 0.5);
+}
+.spaceit{
+    padding: 3%;
+}
+button{
+    width: 200px;
+    text-align: center;
+    border-radius: 25px;
+    margin: 20px 10px;
+    font-weight: bold;
+    padding: 15px 0;
+    border: 2px solid black;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+span{
+    background: black;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+button:hover span{
+    width: 100%;
+}
+button:hover {
+    border: none;
+}
+.text{
+    padding-top: 10px;
+}
+.icon{
+    color: rgb(203, 222, 221);
+}
